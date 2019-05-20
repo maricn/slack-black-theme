@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", function() {
     let customCustomCSS = `
    :root {
       /* Modify these to change your theme colors: */
---primary: #09F;
---text: #AAA;
+--primary: #7985e0;
+--text: #BBB;
 --background: #222;
 --background-elevated: #333;
 
