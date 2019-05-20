@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let customCustomCSS = `
    :root {
       /* Modify these to change your theme colors: */
---primary: #CCC;
+--primary: #09F;
 --text: #AAA;
 --background: #222;
 --background-elevated: #333;
@@ -22,7 +22,9 @@ document.addEventListener("DOMContentLoaded", function() {
 //      --text: #CCC;
 //      --background: #080808;
 //      --background-elevated: #222;
-   }
+//
+  
+}
    `
 
     // Insert a style tag into the wrapper view

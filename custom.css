@@ -134,7 +134,7 @@ ts-jumper input[type="text"],
     color: var(--text);
 }
 .c-message_list__day_divider__line {
-    border-top: 1px solid var(--border-dim);
+    border-top: 1px solid var(--border-bright);
 }
 
 .c-message__body {
@@ -385,8 +385,8 @@ ts-jumper input[type="text"]::-webkit-input-placeholder {
 }
 
 .mention_day_container_div .day_divider:before {
-   background-color: transparent !important;
-   border-color: var(--border-dim);
+    background-color: transparent !important;
+    border-color: var(--border-bright);
 }
 
 .day_container .day_msgs {
@@ -834,7 +834,7 @@ ts-message.active .edited, ts-message.active .reply_bar .last_reply_at, ts-messa
 }
 .p-threads_view_reply--new_reply {
 	background-color: var(--background-light) !important;
-	color: var(--text-bright);
+    color: var(--text-bright);
 }
 .p_threads_view_load_newer_button,
 .p_threads_view_load_older_button {
