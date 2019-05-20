@@ -186,7 +186,7 @@ ts-jumper input[type="text"],
 }
 .c-message_list__day_divider__line,
 .p-threads_view__divider_line {
-	border-top: 1px solid var(--border-dim);
+	border-top: 1px solid var(--border-bright);
 }
 
 .c-message__body {
@@ -376,7 +376,7 @@ ts-jumper input[type="text"]::-webkit-input-placeholder {
 }
 
 .mention_day_container_div .day_divider .day_divider_label {
-   border: 1px solid var(--border-dim) !important;
+   border: 1px solid var(--border-bright) !important;
 }
 
 #convo_container .convo_flexpane_divider .reply_count {
@@ -860,7 +860,7 @@ ts-message.active .edited, ts-message.active .reply_bar .last_reply_at, ts-messa
 	color: var(--text);
 }
 .p-threads_view__divider_line {
-    border-color: var(--border-dim);
+    border-color: var(--border-bright);
 }
 .p-threads_view__divider_label {
     background-color: var(--background-elevated);
@@ -1037,7 +1037,7 @@ ts-thread .view_all_replies_container:hover {
 #threads_msgs_scroller_div .threads_caught_up_divider .divider_line,
 #threads_msgs_scroller_div .threads_caught_up_divider .divider_label {
    background-color: var(--background-elevated);
-   border: 1px solid var(--border-dim);
+   border: 1px solid var(--border-bright);
    color: var(--text);
 }
 
