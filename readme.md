@@ -2,6 +2,10 @@
 
 A darker, more contrasty, Slack theme.
 
+# Updates from maricn
+
+Use update-4.0.0.sh for Slack 4.+ or update.sh for lower versions. Slack 4 update script requires asar installed by npm.
+
 # Preview
 
 ![Screenshot](https://cloud.githubusercontent.com/assets/7691630/24120350/4cbb643e-0d82-11e7-8353-5d4eb65dfd6a.png)
