@@ -1202,7 +1202,12 @@ select {
 .notification_example.mac {
   color: #555459; /* default color - leave unthemed */
 }
-
+.p-prefs_modal__radiogroup label.p-prefs_modal__radiogroup--selected {
+    background: var(--background);
+}
+.p-prefs_modal__radiogroup .p-prefs_modal__radio_decorator {
+    background-color: var(--background-elevated);
+}
 /* global jumper */
 ts-jumper, ts-jumper.active {
   background-color: rgba(32,32,32,0.6);
@@ -1415,19 +1420,6 @@ ts-jumper ts-jumper-container {
 	color: var(--background-light) !important;
 }
 
-/* channel detail view */
-#details_tab .feature_sli_channel_insights .channel_created_section .creator_link, #details_tab .feature_sli_channel_insights .channel_purpose_section .channel_purpose_text, .c-team__display-name, .c-usergroup__handle
-{
-    color: unset;
-}
-.c-channel_insights__date_heading span {
-	background-color: var(--background-light);
-}
-.channel_page_member_row:hover {
-    background-color: var(--background-hover);
-    border-color: var(--border-dim);
-}
-
 /* workspace directory */
 .searchable_member_list_filter .faux_input {
     color: var(--text);
@@ -1552,6 +1544,12 @@ nav {
 .c-button--disabled {
     background-color: var(--background-light);
 }
+.c-select_button {
+    background-color: var(--background-elevated);
+}
+.c-select_button:active {
+    background-color: var(--background-hover);
+}
 /* dialogs */
 .c-dialog__header {
     background: var(--background-elevated);
@@ -1604,10 +1602,25 @@ nav {
 }
 .p-file_list__filters {
 	background: var(--background-elevated);
-	padding-top: 12px;
+}
+.p-file_list__file.c-pillow_file_container--full_width {
+    border-color: var(--border-dim);
 }
 .c-pillow_file_container--full_width:focus, .c-pillow_file_container--full_width:focus-within, .c-pillow_file_container--full_width:hover {
 	background-color: var(--background-elevated);
+}
+
+.c-action_buttons.c-file__actions {
+    border-color: var(--border-dim);
+}
+.c-action_buttons__button {
+    background-color: var(--background-elevated);
+}
+.c-action_buttons__button:focus {
+    background-color: var(--background-hover);
+}
+.c-action_buttons__button:hover .c-action_buttons__icon {
+    color: var(--text);
 }
 /* side lists */
 #client-ui .searchable_member_list .team_list_item:hover {
@@ -1734,6 +1747,9 @@ ts-jumper .p-jumper__help {
 .c-message_attachment__author--distinct {
     color: var(--text);
 }
+.c-message_attachment__author_name, .c-message_attachment__author_name.c-link--button, .c-message_attachment__author_name.c-link--button:active, .c-message_attachment__author_name.c-link--button:focus, .c-message_attachment__author_name.c-link--button:hover {
+    color: var(--text);
+}
 
 /* 3.3.1 emoji picker */
 .c-menu.p-emoji_picker, .c-menu.p-emoji_picker div, .c-menu.p-emoji_picker h3 {
@@ -1789,7 +1805,8 @@ ts-jumper .p-jumper__help {
 
 .internal_im_link,
 .c-button.c-button--outline {
-	color: var(--text) !important;
+	color: var(--text) !important;	
+    border-color: var(--border-dim);
 }
 
 /* unread counter */
@@ -1819,4 +1836,145 @@ ts-jumper .p-jumper__help {
     background-color: var(--background-elevated);
 }.p-app_space__header {
     color: var(--text);
+}
+
+/* file upload */
+.p-multi_file_upload__container .p-galler_scroller__wrapper {
+    background: var(--background);
+}
+.c-pillow_file {
+    background: var(--background-elevated);
+}
+.c-dialog__footer .p-file_upload_dialog__footer_share_inputs {
+    color: var(--text);
+}
+
+/* option list */
+
+.c-select_options_list__wrapper {
+    background-color: var(--background-elevated);
+	border: 1px solid var(--border-dim);
+}
+.c-select_options_list__option {
+    color: var(--text);
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    background: var(--scrollbar-background);
+}
+
+/** Slack 4 **/
+strong {
+    color: var(--text) !important;
+}
+.c-alert--boxed {
+    color: var(--text);
+}
+.c-multi_select_input {
+    background-color: var(--background-elevated);
+}
+.c-token {
+    background-color: var(--background);
+}
+.c-fullscreen_modal__content--with_footer .c-fullscreen_modal__footer {
+    background-color: var(--background);
+}
+
+.p-classic_nav {
+    background-color: var(--background);
+}
+
+.p-file_drag_drop__container {
+	background-color: var(--background);
+}
+
+.p-workspace__input .p-message_input_field {
+    background-color: var(--background);
+    border-color: var(--border-dim);
+}
+.p-classic_nav__model__title__info.p-classic_nav__no_drag {
+    color: var(--text);
+}
+.p-classic_nav__team_header {
+    background-color: var(--background-elevated);
+}
+.p-team_sidebar__icon--active, .p-team_sidebar__icon--active:hover {
+    box-shadow: 0 0 0 3px rgb(19,30,39), 0 0 0 6px var(--border-dim);
+}
+.c-menu_item__link_icon, .c-menu_item__shortcut {
+    color: var(--text-bright);
+}
+.p-classic_nav__model__title__info__topic--focus-within .p-classic_nav__model__title__info__topic__text:before, .p-classic_nav__model__title__info__topic:hover .p-classic_nav__model__title__info__topic__text:before {
+    background: var(--background-elevated);
+}
+
+/* sidebars default in general */
+.p-workspace--classic-nav .p-workspace__secondary_view {
+	background-color: var(--background);
+    border-color: var(--border-dim);
+}
+
+/* channel detail view */
+.p-channel_details_section.p-channel_details__channel_details_section {
+    background-color: var(--background-elevated);
+}
+.p-channel_details__heading {
+    color: inherit;
+}
+.p-channel_details__created_link, .p-channel_details__created_link:hover {
+	color: inherit;
+}
+.c-message_kit__pillow {
+    background-color: var(--background-elevated);
+}
+@keyframes fade-background-highlight 
+{ 
+	0% { background: var(--background-light); }
+  100% { background: transparent; } 
+}
+.p-highlights_section__group_title_line {
+    border-color: var(--border-dim);
+}
+.p-highlights_section__group_title_label {
+    background-color: var(--background-elevated);
+}
+.p-classic_nav__right__search__placeholder {
+    color: var(--text);
+}
+.p-pinned_items__empty_list .p-pinned_items__empty_list_action {
+    color: var(--text);
+}
+
+/* create channel */
+.p-channel_create_modal__label_title {
+    color: var(--text);
+}
+.p-channel_create_modal, .p-channel_create_modal__label_title, .p-channel_create_modal__private_toggle_copy_body, .p-channel_create_modal__private_toggle_copy_title, .p-channel_create_modal__share, .p-channel_name_input__label_title, .p-invite_users_input__label_title {
+	color: var(--text);
+}
+.p-channel_create_modal__input_subtext {
+    color: var(--text);
+}
+.p-invite_users_input__input_subtext {
+    color: var(--text);
+}
+.c-toggle__input {
+    background-color: var(--background-light);
+}
+
+/* workspace directory */
+.p-member_directory__member_row {
+    background-color: var(--background-elevated);
+    border-color: var(--border-dim);
+}
+.p-member_directory__member_row:focus, .p-member_directory__member_row:focus-within, .p-member_directory__member_row:hover {
+    background-color: var(--background-hover);
+}
+/* autocomplete lists */
+.c-texty_autocomplete {
+    background-color: var(--background-elevated);
+}
+.c-texty_autocomplete__result_highlight {
+    background-color: var(--background);
 }
