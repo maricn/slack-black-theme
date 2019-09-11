@@ -49,12 +49,16 @@ if (!(Test-Path "$7zipRoot\Formats\Asar*"))
 Get-Process slack -ErrorAction SilentlyContinue | Stop-Process -PassThru
 
 # Already have a backup? Might want to restore
+$oldLocation = Get-Location
 if ((Test-Path "$SlackResources\app.asar.backup") -or (Test-Path "$SlackResources\app.asar.unpacked\src\static\index.js.backup") -or (Test-Path "$SlackResources\app.asar.unpacked\src\static\ssb-interop.backup"))
 {
 	$result = [System.Windows.Forms.MessageBox]::Show("A backup of the app already exists, do you want to remove the custom theme and restore to the previous version?", "Remove custom theme?", [System.Windows.Forms.MessageBoxButtons]::YesNoCancel, [System.Windows.Forms.MessageBoxIcon]::Question)
 	if ($result -eq [System.Windows.Forms.DialogResult]::Yes)
 	{
-		if ($Slack_Major -gt 1) {
+		if ($Slack_Major -eq 4) {
+			echo "Restoring for Slack 4.."	
+			Move-Item -Force $SlackResources\app.asar.backup $SlackResources\app.asar
+		} elseif ($Slack_Major -gt 1) {
 			echo "Restoring for Slack 2+.."		
 			Move-Item -Force $SlackResources\app.asar.unpacked\src\static\index.js.backup $SlackResources\app.asar.unpacked\src\static\index.js
 
@@ -62,14 +66,13 @@ if ((Test-Path "$SlackResources\app.asar.backup") -or (Test-Path "$SlackResource
 				echo "Restoring for Slack 3.."		
 				Move-Item -Force $SlackResources\app.asar.unpacked\src\static\ssb-interop.js.backup $SlackResources\app.asar.unpacked\src\static\ssb-interop.js
 			}
-		} else {
-			# Restore the backup
-			Move-Item -Force $SlackResources\app.asar.backup $SlackResources\app.asar
 		}
 	
 
 		# Start slack again
-		& $SlackRoot\slack.exe
+		Set-Location $SlackRoot
+		.\slack.exe
+		Set-Location $oldLocation
 
 		# Prevent further execution
 		exit
@@ -90,8 +93,6 @@ if (!(Test-Path $tempDir))
 {
 	New-Item -Path $tempDir -ItemType Directory
 }
-
-$oldLocation = Get-Location
 Set-Location $tempDir
 
 if ($Slack_Major -eq 4) {
@@ -166,4 +167,6 @@ Set-Location $oldLocation
 Remove-Item -Recurse -Path $tempDir
 
 # Start slack again
-& $SlackRoot\slack.exe
+Set-Location $SlackRoot
+.\slack.exe
+Set-Location $oldLocation
